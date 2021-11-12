@@ -1,8 +1,8 @@
 <?php
 
-use App\Http\Controllers\Admin\PackagesController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\PackagesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,14 +21,13 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('admin.home');
-
 Route::middleware('auth')
 ->namespace('Admin')
 ->name('admin.')
 ->prefix('admin')
 ->group(function(){
-    Route::resource('packages', PackagesController::class );
+    Route::get('/', 'HomeController@index')->name('home');
+    Route::resource('packages', 'PackagesController' );
 });
 
 
