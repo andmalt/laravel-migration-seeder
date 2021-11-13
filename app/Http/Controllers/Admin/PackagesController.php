@@ -15,7 +15,9 @@ class PackagesController extends Controller
      */
     public function index()
     {
-        //
+        $travelPackages = TravelPackage::all();
+
+        return view('admin.travelPackage.index', compact('travelPackages'));
     }
 
     /**
@@ -45,9 +47,9 @@ class PackagesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(TravelPackage $package)
     {
-        //
+        return view('admin.travelPackage.show' , compact('package'));
     }
 
     /**

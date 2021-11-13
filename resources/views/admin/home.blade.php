@@ -15,6 +15,8 @@
                     @endif
 
                     {{ __('You are logged in!') }}
+
+                    <a href="{{ route('admin.packages.index') }}" class="btn btn-dark m-2">See travel packages</a>
                 </div>
             </div>
         </div>
